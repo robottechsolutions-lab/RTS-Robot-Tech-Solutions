@@ -1,1 +1,2055 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS Robot Tech Solutions | Building the Future Where Tech Helps Humanity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            --primary: #0a2463;
+            --primary-dark: #071845;
+            --secondary: #3e92cc;
+            --accent: #ff6b6b;
+            --accent-light: #ff8e8e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --success: #4CAF50;
+            --tech-blue: #00b4d8;
+            --tech-purple: #7b2cbf;
+            --instagram: #E4405F;
+            --facebook: #1877F2;
+            --whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--tech-blue));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--tech-purple));
+            color: white;
+            box-shadow: 0 5px 15px rgba(10, 36, 99, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(10, 36, 99, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: rgba(10, 36, 99, 0.98);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--tech-blue);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            font-weight: 300;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 8px 0;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul li a:hover {
+            color: var(--tech-blue);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--tech-blue);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.9) 0%, rgba(123, 44, 191, 0.85) 100%), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 200px 0 150px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--tech-blue);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--gray);
+        }
+
+        .mission-vision {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--tech-blue);
+        }
+
+        .vision {
+            border-top-color: var(--accent);
+        }
+
+        .mission h4, .vision h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mission h4 i, .vision h4 i {
+            margin-right: 10px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team {
+            background-color: var(--light);
+        }
+
+        .team-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .member-img-container {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--tech-purple));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .avatar-placeholder i {
+            font-size: 8rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .avatar-placeholder span {
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-info h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .member-info .role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .member-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .member-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .member-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gray-light);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .member-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .member-social a.instagram:hover {
+            background: var(--instagram);
+            color: white;
+        }
+
+        .member-social a.facebook:hover {
+            background: var(--facebook);
+            color: white;
+        }
+
+        .join-team {
+            text-align: center;
+            margin-top: 80px;
+            padding: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--tech-purple));
+            border-radius: 15px;
+            color: white;
+        }
+
+        .join-team h3 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .join-team p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 5px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top: 5px solid var(--secondary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            flex-grow: 1;
+        }
+
+        .service-features {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background-color: var(--light);
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 17px 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .country-code {
+            flex: 0 0 150px;
+        }
+
+        .phone-number {
+            flex: 1;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--tech-purple));
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(10, 36, 99, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .email-info {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--gray);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .email-info i {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--tech-blue);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--tech-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .social-links a.instagram:hover {
+            background: var(--instagram);
+        }
+
+        .social-links a.facebook:hover {
+            background: var(--facebook);
+        }
+
+        .social-links a.whatsapp:hover {
+            background: var(--whatsapp);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--tech-blue);
+            padding-left: 5px;
+        }
+
+        .footer-column ul li a i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info li i {
+            margin-right: 15px;
+            color: var(--tech-blue);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MODALS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 550px;
+            padding: 50px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal h3 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .modal-text {
+            text-align: center;
+            margin-bottom: 35px;
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .modal-icon {
+            text-align: center;
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 25px;
+        }
+
+        .modal-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--tech-purple));
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(10, 36, 99, 0.2);
+        }
+
+        .modal-btn.whatsapp-btn {
+            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+        }
+
+        .modal-btn.instagram-btn {
+            background: linear-gradient(135deg, var(--instagram), #C13584);
+            margin-top: 10px;
+        }
+
+        .modal-btn.facebook-btn {
+            background: linear-gradient(135deg, var(--facebook), #166FE5);
+            margin-top: 10px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-form {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: var(--primary-dark);
+                padding: 100px 30px 30px;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+                z-index: 999;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 25px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding: 160px 0 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .modal-content {
+                padding: 40px 25px;
+            }
+            
+            .phone-input-group {
+                flex-direction: column;
+            }
+            
+            .country-code, .phone-number {
+                flex: 1;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .member-info {
+                padding: 25px 20px;
+            }
+            
+            .join-team {
+                padding: 40px 25px;
+            }
+            
+            .join-team h3 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                gap: 30px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ===== LOADING ANIMATION ===== */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(62, 146, 204, 0.2);
+            border-radius: 50%;
+            border-top: 4px solid var(--secondary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== NOTIFICATION ===== */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--success);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 3000;
+            display: none;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .notification.error {
+            background: var(--accent);
+        }
+
+        /* ===== INTERNET STATUS INDICATOR ===== */
+        .internet-status {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1001;
+            display: none;
+            animation: slideInRight 0.3s ease;
+        }
+        
+        .internet-status.online {
+            background: var(--success);
+            color: white;
+            display: block;
+        }
+        
+        .internet-status.offline {
+            background: var(--accent);
+            color: white;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Internet Status Indicator -->
+    <div class="internet-status" id="internetStatus"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <div class="logo-text">RTS<span>.</span></div>
+                    <div class="logo-tagline">Robot Tech Solutions</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#team"><i class="fas fa-users"></i> Team</a></li>
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Building The Future Where <span>Technology Helps Humanity</span></h1>
+            <p>RTS Robot Tech Solutions is pioneering a new era where technology and innovation converge to solve humanity's greatest challenges. Founded by science students with a vision for a better tomorrow, we're creating technology that serves people, enhances lives, and builds a sustainable future.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Join Our Mission</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About RTS</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Vision for a Tech-Enabled Future</h3>
+                    <p>RTS Robot Tech Solutions was founded by Olan Tony, a curious science student who envisioned a new chapter in technology—one where innovation serves humanity rather than replaces it. RTS represents the beginning of a movement where technology is developed with human needs at its core.</p>
+                    <p>We believe in a future where technology assists in healthcare, education, environmental protection, and daily living - not to replace humans, but to enhance our capabilities and free us to focus on what makes us uniquely human: creativity, empathy, and connection.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                            <p>To develop accessible, ethical technological solutions that address real human needs while fostering global collaboration among students and innovators.</p>
+                        </div>
+                        <div class="vision">
+                            <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                            <p>A world where technology and humanity coexist in harmony, with innovation enhancing quality of life for all people regardless of background or circumstance.</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 30px;"><strong>RTS is just the beginning.</strong> We are starting this journey as students, but we invite students and innovators from around the globe to join us in building this future together.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Technology helping humanity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+            </div>
+            
+            <div class="team-description">
+                <p>We are science students who believe technology should serve humanity. Our diverse perspectives allow us to approach problems from multiple angles, ensuring our solutions are both innovative and deeply human-centered.</p>
+            </div>
+            
+            <div class="team-members">
+                <!-- Founder: Olan Tony -->
+                <div class="team-member">
+                    <div class="member-img-container">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user"></i>
+                            <span>Olan Tony</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Olan Tony</h3>
+                        <span class="role">Founder & Science Student</span>
+                        <p>Olan is a visionary science student with a deep curiosity about how technology can solve human problems. He founded RTS with the conviction that technology must be developed with ethical considerations and human needs at its core. As a student, he leads our initiative while ensuring every solution aligns with our mission of serving humanity.</p>
+                        <p>"Technology should amplify human potential, not replace it. At RTS, we're building tools that empower people to solve problems we once thought impossible. This is just the beginning of a new era where technology truly helps humanity."</p>
+                        <div class="member-social">
+                            <a href="mailto:robottechsolutions@gmail.com" title="Email Olan Tony"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/robottechsolutions?igsh=cGF0ZGZqdXdmbzdk" target="_blank" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61587189816645" target="_blank" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Co-Contributor: Babatunde Kenny -->
+                <div class="team-member">
+                    <div class="member-img-container">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Babatunde Kenny</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Babatunde Kenny</h3>
+                        <span class="role">Co-Contributor & Science Student</span>
+                        <p>Babatunde is a science student who shares the vision that technology can help humanity in profound ways. She contributes to RTS by bringing a human-centered perspective to technological innovation. Her insights ensure our solutions remain grounded in real human needs and ethical considerations.</p>
+                        <p>"Technology in service of humanity isn't about creating robots to replace us; it's about building tools that enhance our capabilities and address real challenges. As students, we have the opportunity to shape this future from the ground up."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Join Team Section -->
+            <div class="join-team">
+                <h3>Join Our Global Student Network</h3>
+                <p>RTS is just the beginning of a much larger movement. We're building a global community of students and innovators who believe technology should serve humanity. Whether you're studying science, technology, engineering, medicine, design, or any other field, your perspective is valuable.</p>
+                <p><strong>Together, we can build the future where technology truly helps humanity.</strong></p>
+                <a href="#contact" class="btn btn-secondary">Join RTS Movement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Focus Areas</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare Technology</h3>
+                    <p>Exploring technological solutions for healthcare applications including assistive devices, diagnostic support, and healthcare accessibility.</p>
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Assistive healthcare devices</li>
+                            <li><i class="fas fa-check-circle"></i> Diagnostic support systems</li>
+                            <li><i class="fas fa-check-circle"></i> Healthcare accessibility solutions</li>
+                            <li><i class="fas fa-check-circle"></i> Medical data analysis tools</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Solutions</h3>
+                    <p>Researching technological approaches for environmental protection, pollution monitoring, and sustainable resource management.</p>
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Environmental monitoring systems</li>
+                            <li><i class="fas fa-check-circle"></i> Pollution detection technology</li>
+                            <li><i class="fas fa-check-circle"></i> Sustainable innovation research</li>
+                            <li><i class="fas fa-check-circle"></i> Climate solution development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educational Innovation</h3>
+                    <p>Developing accessible technological platforms and educational resources to empower the next generation of problem-solvers.</p>
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> STEM education resources</li>
+                            <li><i class="fas fa-check-circle"></i> Accessible learning platforms</li>
+                            <li><i class="fas fa-check-circle"></i> Global student collaborations</li>
+                            <li><i class="fas fa-check-circle"></i> Innovation workshops</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Movement</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country"><i class="fas fa-globe"></i> Country</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select your country</option>
+                                <!-- Countries will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <div class="phone-input-group">
+                                <div class="country-code">
+                                    <select id="countryCode" name="countryCode" required>
+                                        <option value="">Country Code</option>
+                                        <!-- Country codes will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                                <div class="phone-number">
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="field"><i class="fas fa-graduation-cap"></i> Your Field of Study/Interest</label>
+                            <input type="text" id="field" name="field" placeholder="e.g., Computer Science, Medicine, Engineering..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Your Message / How You'd Like to Contribute</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your interest in RTS, your background, or how you'd like to contribute..." required></textarea>
+                        </div>
+                        
+                        <div class="email-info">
+                            <i class="fas fa-envelope"></i>
+                            <p>Click "Submit" to open your email client and send your information to robottechsolutions@gmail.com</p>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Submit & Send Email
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">RTS<span>.</span></div>
+                    <p>Robot Tech Solutions is a student-led initiative building the future where technology serves humanity. Join us in creating solutions that enhance lives and build a better world for all.</p>
+                    <div class="social-links">
+                        <a href="mailto:robottechsolutions@gmail.com" title="Email RTS Team"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/robottechsolutions?igsh=cGF0ZGZqdXdmbzdk" target="_blank" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61587189816645" target="_blank" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About RTS</a></li>
+                        <li><a href="#team"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Focus Areas</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Join Movement</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Global Student Initiative</li>
+                        <li><i class="fas fa-envelope"></i> robottechsolutions@gmail.com</li>
+                        <li><i class="fas fa-users"></i> Student-Led Initiative</li>
+                        <li><i class="fas fa-heart"></i> Technology Serving Humanity</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; RTS Robot Tech Solutions. All rights reserved. | Founded by Science Students for a Better Future</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thank You Modal -->
+    <div class="modal" id="thankYouModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeThankYouModal">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <div class="modal-text">
+                <p>Thank you for reaching out to RTS Robot Tech Solutions! We have received your information and will get back to you as soon as possible.</p>
+                <p>If your email client didn't open automatically, please send your details to: <strong>robottechsolutions@gmail.com</strong></p>
+                <p><strong>Join our community groups to stay connected:</strong></p>
+            </div>
+            <a href="https://chat.whatsapp.com/L4OdMR7o4pA0eGwswoYfZJ?mode=gi_c" target="_blank" class="modal-btn whatsapp-btn" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+            </a>
+            <a href="https://www.instagram.com/robottechsolutions?igsh=cGF0ZGZqdXdmbzdk" target="_blank" class="modal-btn instagram-btn">
+                <i class="fab fa-instagram"></i> Follow on Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61587189816645" target="_blank" class="modal-btn facebook-btn">
+                <i class="fab fa-facebook-f"></i> Like on Facebook
+            </a>
+            <button class="modal-btn" id="closeThankYouBtn" style="margin-top: 20px;">Close</button>
+        </div>
+    </div>
+
+    <!-- Email Instruction Modal -->
+    <div class="modal" id="emailInstructionModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeEmailModal">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Send Your Application</h3>
+            <div class="modal-text">
+                <p>Your application has been prepared. Your email client should open automatically with a pre-filled email.</p>
+                <p><strong>Important:</strong> Please review the email and click "Send" to complete your application.</p>
+                <p>After sending the email, return to this page where you'll see a confirmation message and links to join our community groups.</p>
+            </div>
+            <button class="modal-btn" id="openEmailBtn">
+                <i class="fas fa-external-link-alt"></i> Open Email Client
+            </button>
+            <button class="modal-btn btn-secondary" id="cancelEmailBtn" style="margin-top: 10px;">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== DOM ELEMENTS =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const contactForm = document.getElementById('contactForm');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        const countrySelect = document.getElementById('country');
+        const countryCodeSelect = document.getElementById('countryCode');
+        const internetStatus = document.getElementById('internetStatus');
+        
+        // Modal elements
+        const thankYouModal = document.getElementById('thankYouModal');
+        const emailInstructionModal = document.getElementById('emailInstructionModal');
+        const closeThankYouModal = document.getElementById('closeThankYouModal');
+        const closeThankYouBtn = document.getElementById('closeThankYouBtn');
+        const closeEmailModal = document.getElementById('closeEmailModal');
+        const openEmailBtn = document.getElementById('openEmailBtn');
+        const cancelEmailBtn = document.getElementById('cancelEmailBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        
+        // Store form data for email
+        let formDataForEmail = null;
+        
+        // ===== COUNTRY DATA =====
+        const countries = [
+            {name: "Afghanistan", code: "AF", phone: "+93"},
+            {name: "Albania", code: "AL", phone: "+355"},
+            {name: "Algeria", code: "DZ", phone: "+213"},
+            {name: "Andorra", code: "AD", phone: "+376"},
+            {name: "Angola", code: "AO", phone: "+244"},
+            {name: "Antigua and Barbuda", code: "AG", phone: "+1-268"},
+            {name: "Argentina", code: "AR", phone: "+54"},
+            {name: "Armenia", code: "AM", phone: "+374"},
+            {name: "Australia", code: "AU", phone: "+61"},
+            {name: "Austria", code: "AT", phone: "+43"},
+            {name: "Azerbaijan", code: "AZ", phone: "+994"},
+            {name: "Bahamas", code: "BS", phone: "+1-242"},
+            {name: "Bahrain", code: "BH", phone: "+973"},
+            {name: "Bangladesh", code: "BD", phone: "+880"},
+            {name: "Barbados", code: "BB", phone: "+1-246"},
+            {name: "Belarus", code: "BY", phone: "+375"},
+            {name: "Belgium", code: "BE", phone: "+32"},
+            {name: "Belize", code: "BZ", phone: "+501"},
+            {name: "Benin", code: "BJ", phone: "+229"},
+            {name: "Bhutan", code: "BT", phone: "+975"},
+            {name: "Bolivia", code: "BO", phone: "+591"},
+            {name: "Bosnia and Herzegovina", code: "BA", phone: "+387"},
+            {name: "Botswana", code: "BW", phone: "+267"},
+            {name: "Brazil", code: "BR", phone: "+55"},
+            {name: "Brunei", code: "BN", phone: "+673"},
+            {name: "Bulgaria", code: "BG", phone: "+359"},
+            {name: "Burkina Faso", code: "BF", phone: "+226"},
+            {name: "Burundi", code: "BI", phone: "+257"},
+            {name: "Cabo Verde", code: "CV", phone: "+238"},
+            {name: "Cambodia", code: "KH", phone: "+855"},
+            {name: "Cameroon", code: "CM", phone: "+237"},
+            {name: "Canada", code: "CA", phone: "+1"},
+            {name: "Central African Republic", code: "CF", phone: "+236"},
+            {name: "Chad", code: "TD", phone: "+235"},
+            {name: "Chile", code: "CL", phone: "+56"},
+            {name: "China", code: "CN", phone: "+86"},
+            {name: "Colombia", code: "CO", phone: "+57"},
+            {name: "Comoros", code: "KM", phone: "+269"},
+            {name: "Congo", code: "CG", phone: "+242"},
+            {name: "Costa Rica", code: "CR", phone: "+506"},
+            {name: "Croatia", code: "HR", phone: "+385"},
+            {name: "Cuba", code: "CU", phone: "+53"},
+            {name: "Cyprus", code: "CY", phone: "+357"},
+            {name: "Czech Republic", code: "CZ", phone: "+420"},
+            {name: "Denmark", code: "DK", phone: "+45"},
+            {name: "Djibouti", code: "DJ", phone: "+253"},
+            {name: "Dominica", code: "DM", phone: "+1-767"},
+            {name: "Dominican Republic", code: "DO", phone: "+1-809"},
+            {name: "Ecuador", code: "EC", phone: "+593"},
+            {name: "Egypt", code: "EG", phone: "+20"},
+            {name: "El Salvador", code: "SV", phone: "+503"},
+            {name: "Equatorial Guinea", code: "GQ", phone: "+240"},
+            {name: "Eritrea", code: "ER", phone: "+291"},
+            {name: "Estonia", code: "EE", phone: "+372"},
+            {name: "Eswatini", code: "SZ", phone: "+268"},
+            {name: "Ethiopia", code: "ET", phone: "+251"},
+            {name: "Fiji", code: "FJ", phone: "+679"},
+            {name: "Finland", code: "FI", phone: "+358"},
+            {name: "France", code: "FR", phone: "+33"},
+            {name: "Gabon", code: "GA", phone: "+241"},
+            {name: "Gambia", code: "GM", phone: "+220"},
+            {name: "Georgia", code: "GE", phone: "+995"},
+            {name: "Germany", code: "DE", phone: "+49"},
+            {name: "Ghana", code: "GH", phone: "+233"},
+            {name: "Greece", code: "GR", phone: "+30"},
+            {name: "Grenada", code: "GD", phone: "+1-473"},
+            {name: "Guatemala", code: "GT", phone: "+502"},
+            {name: "Guinea", code: "GN", phone: "+224"},
+            {name: "Guinea-Bissau", code: "GW", phone: "+245"},
+            {name: "Guyana", code: "GY", phone: "+592"},
+            {name: "Haiti", code: "HT", phone: "+509"},
+            {name: "Honduras", code: "HN", phone: "+504"},
+            {name: "Hungary", code: "HU", phone: "+36"},
+            {name: "Iceland", code: "IS", phone: "+354"},
+            {name: "India", code: "IN", phone: "+91"},
+            {name: "Indonesia", code: "ID", phone: "+62"},
+            {name: "Iran", code: "IR", phone: "+98"},
+            {name: "Iraq", code: "IQ", phone: "+964"},
+            {name: "Ireland", code: "IE", phone: "+353"},
+            {name: "Israel", code: "IL", phone: "+972"},
+            {name: "Italy", code: "IT", phone: "+39"},
+            {name: "Jamaica", code: "JM", phone: "+1-876"},
+            {name: "Japan", code: "JP", phone: "+81"},
+            {name: "Jordan", code: "JO", phone: "+962"},
+            {name: "Kazakhstan", code: "KZ", phone: "+7"},
+            {name: "Kenya", code: "KE", phone: "+254"},
+            {name: "Kiribati", code: "KI", phone: "+686"},
+            {name: "Korea, North", code: "KP", phone: "+850"},
+            {name: "Korea, South", code: "KR", phone: "+82"},
+            {name: "Kosovo", code: "XK", phone: "+383"},
+            {name: "Kuwait", code: "KW", phone: "+965"},
+            {name: "Kyrgyzstan", code: "KG", phone: "+996"},
+            {name: "Laos", code: "LA", phone: "+856"},
+            {name: "Latvia", code: "LV", phone: "+371"},
+            {name: "Lebanon", code: "LB", phone: "+961"},
+            {name: "Lesotho", code: "LS", phone: "+266"},
+            {name: "Liberia", code: "LR", phone: "+231"},
+            {name: "Libya", code: "LY", phone: "+218"},
+            {name: "Liechtenstein", code: "LI", phone: "+423"},
+            {name: "Lithuania", code: "LT", phone: "+370"},
+            {name: "Luxembourg", code: "LU", phone: "+352"},
+            {name: "Madagascar", code: "MG", phone: "+261"},
+            {name: "Malawi", code: "MW", phone: "+265"},
+            {name: "Malaysia", code: "MY", phone: "+60"},
+            {name: "Maldives", code: "MV", phone: "+960"},
+            {name: "Mali", code: "ML", phone: "+223"},
+            {name: "Malta", code: "MT", phone: "+356"},
+            {name: "Marshall Islands", code: "MH", phone: "+692"},
+            {name: "Mauritania", code: "MR", phone: "+222"},
+            {name: "Mauritius", code: "MU", phone: "+230"},
+            {name: "Mexico", code: "MX", phone: "+52"},
+            {name: "Micronesia", code: "FM", phone: "+691"},
+            {name: "Moldova", code: "MD", phone: "+373"},
+            {name: "Monaco", code: "MC", phone: "+377"},
+            {name: "Mongolia", code: "MN", phone: "+976"},
+            {name: "Montenegro", code: "ME", phone: "+382"},
+            {name: "Morocco", code: "MA", phone: "+212"},
+            {name: "Mozambique", code: "MZ", phone: "+258"},
+            {name: "Myanmar", code: "MM", phone: "+95"},
+            {name: "Namibia", code: "NA", phone: "+264"},
+            {name: "Nauru", code: "NR", phone: "+674"},
+            {name: "Nepal", code: "NP", phone: "+977"},
+            {name: "Netherlands", code: "NL", phone: "+31"},
+            {name: "New Zealand", code: "NZ", phone: "+64"},
+            {name: "Nicaragua", code: "NI", phone: "+505"},
+            {name: "Niger", code: "NE", phone: "+227"},
+            {name: "Nigeria", code: "NG", phone: "+234"},
+            {name: "North Macedonia", code: "MK", phone: "+389"},
+            {name: "Norway", code: "NO", phone: "+47"},
+            {name: "Oman", code: "OM", phone: "+968"},
+            {name: "Pakistan", code: "PK", phone: "+92"},
+            {name: "Palau", code: "PW", phone: "+680"},
+            {name: "Palestine", code: "PS", phone: "+970"},
+            {name: "Panama", code: "PA", phone: "+507"},
+            {name: "Papua New Guinea", code: "PG", phone: "+675"},
+            {name: "Paraguay", code: "PY", phone: "+595"},
+            {name: "Peru", code: "PE", phone: "+51"},
+            {name: "Philippines", code: "PH", phone: "+63"},
+            {name: "Poland", code: "PL", phone: "+48"},
+            {name: "Portugal", code: "PT", phone: "+351"},
+            {name: "Qatar", code: "QA", phone: "+974"},
+            {name: "Romania", code: "RO", phone: "+40"},
+            {name: "Russia", code: "RU", phone: "+7"},
+            {name: "Rwanda", code: "RW", phone: "+250"},
+            {name: "Saint Kitts and Nevis", code: "KN", phone: "+1-869"},
+            {name: "Saint Lucia", code: "LC", phone: "+1-758"},
+            {name: "Saint Vincent and the Grenadines", code: "VC", phone: "+1-784"},
+            {name: "Samoa", code: "WS", phone: "+685"},
+            {name: "San Marino", code: "SM", phone: "+378"},
+            {name: "Sao Tome and Principe", code: "ST", phone: "+239"},
+            {name: "Saudi Arabia", code: "SA", phone: "+966"},
+            {name: "Senegal", code: "SN", phone: "+221"},
+            {name: "Serbia", code: "RS", phone: "+381"},
+            {name: "Seychelles", code: "SC", phone: "+248"},
+            {name: "Sierra Leone", code: "SL", phone: "+232"},
+            {name: "Singapore", code: "SG", phone: "+65"},
+            {name: "Slovakia", code: "SK", phone: "+421"},
+            {name: "Slovenia", code: "SI", phone: "+386"},
+            {name: "Solomon Islands", code: "SB", phone: "+677"},
+            {name: "Somalia", code: "SO", phone: "+252"},
+            {name: "South Africa", code: "ZA", phone: "+27"},
+            {name: "South Sudan", code: "SS", phone: "+211"},
+            {name: "Spain", code: "ES", phone: "+34"},
+            {name: "Sri Lanka", code: "LK", phone: "+94"},
+            {name: "Sudan", code: "SD", phone: "+249"},
+            {name: "Suriname", code: "SR", phone: "+597"},
+            {name: "Sweden", code: "SE", phone: "+46"},
+            {name: "Switzerland", code: "CH", phone: "+41"},
+            {name: "Syria", code: "SY", phone: "+963"},
+            {name: "Taiwan", code: "TW", phone: "+886"},
+            {name: "Tajikistan", code: "TJ", phone: "+992"},
+            {name: "Tanzania", code: "TZ", phone: "+255"},
+            {name: "Thailand", code: "TH", phone: "+66"},
+            {name: "Timor-Leste", code: "TL", phone: "+670"},
+            {name: "Togo", code: "TG", phone: "+228"},
+            {name: "Tonga", code: "TO", phone: "+676"},
+            {name: "Trinidad and Tobago", code: "TT", phone: "+1-868"},
+            {name: "Tunisia", code: "TN", phone: "+216"},
+            {name: "Turkey", code: "TR", phone: "+90"},
+            {name: "Turkmenistan", code: "TM", phone: "+993"},
+            {name: "Tuvalu", code: "TV", phone: "+688"},
+            {name: "Uganda", code: "UG", phone: "+256"},
+            {name: "Ukraine", code: "UA", phone: "+380"},
+            {name: "United Arab Emirates", code: "AE", phone: "+971"},
+            {name: "United Kingdom", code: "GB", phone: "+44"},
+            {name: "United States", code: "US", phone: "+1"},
+            {name: "Uruguay", code: "UY", phone: "+598"},
+            {name: "Uzbekistan", code: "UZ", phone: "+998"},
+            {name: "Vanuatu", code: "VU", phone: "+678"},
+            {name: "Vatican City", code: "VA", phone: "+379"},
+            {name: "Venezuela", code: "VE", phone: "+58"},
+            {name: "Vietnam", code: "VN", phone: "+84"},
+            {name: "Yemen", code: "YE", phone: "+967"},
+            {name: "Zambia", code: "ZM", phone: "+260"},
+            {name: "Zimbabwe", code: "ZW", phone: "+263"}
+        ];
+
+        // ===== POPULATE COUNTRY DROPDOWNS =====
+        function populateCountryDropdowns() {
+            // Sort countries alphabetically
+            countries.sort((a, b) => a.name.localeCompare(b.name));
+            
+            // Populate country select
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.name;
+                option.textContent = country.name;
+                countrySelect.appendChild(option);
+            });
+            
+            // Populate country code select
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.phone;
+                option.textContent = `${country.name} (${country.phone})`;
+                countryCodeSelect.appendChild(option);
+            });
+        }
+
+        // ===== MODAL FUNCTIONS =====
+        function showThankYouModal() {
+            thankYouModal.style.display = 'flex';
+            // Store in session that we showed the thank you
+            sessionStorage.setItem('showedThankYou', 'true');
+        }
+
+        function closeThankYouModalFunc() {
+            thankYouModal.style.display = 'none';
+        }
+
+        function showEmailInstructionModal() {
+            emailInstructionModal.style.display = 'flex';
+        }
+
+        function closeEmailInstructionModal() {
+            emailInstructionModal.style.display = 'none';
+        }
+
+        // ===== MODAL EVENT LISTENERS =====
+        closeThankYouModal.addEventListener('click', closeThankYouModalFunc);
+        closeThankYouBtn.addEventListener('click', closeThankYouModalFunc);
+        closeEmailModal.addEventListener('click', closeEmailInstructionModal);
+        cancelEmailBtn.addEventListener('click', closeEmailInstructionModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === thankYouModal) {
+                closeThankYouModalFunc();
+            }
+            if (event.target === emailInstructionModal) {
+                closeEmailInstructionModal();
+            }
+        });
+
+        // ===== OPEN EMAIL FUNCTION =====
+        function openEmailClient() {
+            if (!formDataForEmail) return;
+            
+            const { name, email, country, countryCode, phoneNumber, field, message } = formDataForEmail;
+            const fullPhone = `${countryCode} ${phoneNumber}`;
+            
+            // Create email content
+            const emailSubject = `RTS Application: ${name}`;
+            const emailBody = `
+RTS APPLICATION SUBMISSION
+
+Personal Information:
+- Full Name: ${name}
+- Email Address: ${email}
+- Country: ${country}
+- Phone Number: ${fullPhone}
+- Field of Study/Interest: ${field}
+
+Message / Contribution Interest:
+${message}
+
+Submitted on: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
+            `;
+            
+            // Encode the email content for mailto link
+            const encodedSubject = encodeURIComponent(emailSubject);
+            const encodedBody = encodeURIComponent(emailBody);
+            
+            // Create mailto link
+            const mailtoLink = `mailto:robottechsolutions@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+            
+            // Open email client in a new tab
+            window.open(mailtoLink, '_blank');
+            
+            // Close email instruction modal
+            closeEmailInstructionModal();
+            
+            // Show thank you modal after a short delay
+            setTimeout(() => {
+                showThankYouModal();
+            }, 1000);
+            
+            // Reset form
+            contactForm.reset();
+        }
+
+        // ===== FORM SUBMISSION =====
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value;
+            const countryCode = document.getElementById('countryCode').value;
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const field = document.getElementById('field').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validation
+            if (!name || !email || !country || !countryCode || !phoneNumber || !field || !message) {
+                showNotification('Please fill in all required fields!', 'error');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address!', 'error');
+                return;
+            }
+            
+            // Validate phone number
+            const phoneRegex = /^[0-9\-\s\(\)]{7,20}$/;
+            if (!phoneRegex.test(phoneNumber.replace(/\s/g, ''))) {
+                showNotification('Please enter a valid phone number!', 'error');
+                return;
+            }
+            
+            // Store form data for email
+            formDataForEmail = {
+                name,
+                email,
+                country,
+                countryCode,
+                phoneNumber,
+                field,
+                message
+            };
+            
+            // Show email instruction modal
+            showEmailInstructionModal();
+        });
+
+        // ===== OPEN EMAIL BUTTON EVENT =====
+        openEmailBtn.addEventListener('click', openEmailClient);
+
+        // ===== MOBILE NAVIGATION =====
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // ===== NOTIFICATION FUNCTION =====
+        function showNotification(message, type = 'success') {
+            notificationText.textContent = message;
+            notification.style.display = 'block';
+            notification.className = 'notification';
+            if (type === 'error') {
+                notification.classList.add('error');
+            }
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+        
+        // ===== INTERNET STATUS FUNCTION =====
+        function updateInternetStatus() {
+            if (navigator.onLine) {
+                internetStatus.textContent = 'Online';
+                internetStatus.className = 'internet-status online';
+                setTimeout(() => {
+                    internetStatus.style.display = 'none';
+                }, 3000);
+            } else {
+                internetStatus.textContent = 'Offline - Some features may not work';
+                internetStatus.className = 'internet-status offline';
+                internetStatus.style.display = 'block';
+            }
+        }
+        
+        // ===== SMOOTH SCROLLING =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // ===== HEADER SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(10, 36, 99, 0.98)';
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 36, 99, 0.98)';
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+            }
+        });
+        
+        // ===== FORM INPUT VALIDATION =====
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        phoneNumberInput.addEventListener('input', function(e) {
+            // Format phone number as user types
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 15) {
+                value = value.substring(0, 15);
+            }
+            this.value = value;
+        });
+        
+        // ===== INITIALIZATION =====
+        window.addEventListener('load', () => {
+            // Populate country dropdowns
+            populateCountryDropdowns();
+            
+            // Check internet status
+            updateInternetStatus();
+            
+            // Check if we should show thank you modal (for returning users)
+            const showedThankYou = sessionStorage.getItem('showedThankYou');
+            if (showedThankYou === 'true') {
+                // Clear the flag
+                sessionStorage.removeItem('showedThankYou');
+                // Show thank you modal
+                setTimeout(() => {
+                    showThankYouModal();
+                }, 500);
+            }
+            
+            // Check for internet connection
+            if (!navigator.onLine) {
+                showNotification('Internet connection required. Some features may not work properly.', 'error');
+            }
+            
+            // Add hover effects to all buttons
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+        
+        // ===== ONLINE/OFFLINE DETECTION =====
+        window.addEventListener('online', () => {
+            updateInternetStatus();
+            showNotification('Internet connection restored. All features are now available.');
+        });
+        
+        window.addEventListener('offline', () => {
+            updateInternetStatus();
+            showNotification('Internet connection lost. Some features may not work properly.', 'error');
+        });
+        
+        // ===== WHATSAPP BUTTON CONFIRMATION =====
+        whatsappBtn.addEventListener('click', function(e) {
+            if (!navigator.onLine) {
+                e.preventDefault();
+                showNotification('Internet connection required to join WhatsApp group.', 'error');
+            }
+        });
+        
+        // ===== ENSURE ALL EXTERNAL LINKS OPEN IN NEW TAB =====
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            if (!link.getAttribute('target')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    </script>
+</body>
+</html>
